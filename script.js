@@ -123,7 +123,7 @@ function addTask() {
         alert("Please select a category");
         return;
       }
-      
+
       const taskItem = document.createElement("li");
       taskItem.textContent = taskInput.value;
 
@@ -181,7 +181,7 @@ taskItem.appendChild(categoryDiv);
 
 // Delete All Tasks button
 const deleteAllButton = document.createElement("button");
-deleteAllButton.textContent = "Delete All Tasks";
+deleteAllButton.textContent = "Clear All Tasks";
 deleteAllButton.addEventListener("click", deleteAllTasks);
 appContainer.appendChild(deleteAllButton);
 

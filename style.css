@@ -104,6 +104,10 @@ input {
   border-radius: 4px;
   margin-top: 1rem;
   margin-bottom: 10px;
+  border-radius: 5px;
+  border-style: dotted;
+  border-color: #041937;
+  width: 16rem;
 }
 
 p{
@@ -129,6 +133,7 @@ button {
   border-radius: 4px;
   transition: background-color 0.4s;
   margin-left: 2rem;
+ 
 }
 
 #count {
