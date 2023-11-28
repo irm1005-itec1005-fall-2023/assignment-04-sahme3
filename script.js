@@ -77,16 +77,19 @@ appContainer.appendChild(categorySelect);
 
 
 
-   // button to add task
-   const addButton = document.createElement("button");
-   addButton.textContent = "+ Add Task";
-   addButton.addEventListener("click", addTask);
-   appContainer.appendChild(addButton);
+    // button to add task
+    const addButton = document.createElement("button");
+    addButton.textContent = "+ Add Task";
+    addButton.addEventListener("click", addTask);
+    appContainer.appendChild(addButton);
 
+    
 
    //counter
    const countText = document.getElementById("count");
    appContainer.appendChild(countText);
+   
+  
 // counter function
    function updateCount() {
     const taskList = document.querySelector("ul");
@@ -99,7 +102,7 @@ appContainer.appendChild(categorySelect);
     }
   }
 
-console.log(updateCount);
+
     // Create a ul for the task list
     const taskList = document.createElement("ul");
     appContainer.appendChild(taskList);
@@ -170,14 +173,18 @@ taskItem.appendChild(categoryDiv);
   taskItem.appendChild(completedMark);
   taskItem.removeChild(completeButton);
   taskItem.removeChild(deleteButton);
+  updateCount();
   }
   //delete a task
   function deleteTask(event) {
       const taskItem = event.target.parentElement;
       taskItem.remove();
 
+
       updateCount();
   }
+
+  
 
 // Delete All Tasks button
 const deleteAllButton = document.createElement("button");
@@ -192,8 +199,9 @@ function deleteAllTasks() {
  
   updateCount();
 }
+
   
 inititialise();
 
 
-// reference: https://www.w3schools.com /
+//*reference: https://www.w3schools.com */

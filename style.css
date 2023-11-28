@@ -117,6 +117,8 @@ p{
 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 padding: 1rem;
 }
+
+
 h1 {
   text-align: center;
   margin-top: 1rem;
@@ -138,7 +140,17 @@ button {
 
 #count {
   margin-top: 3px;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
+  text-align:start;
+}
+#countcomp {
+  margin-top: 3px;
+  font-size: 1.0rem;
+  text-align:start;
+}
+#countleft {
+  margin-top: 3px;
+  font-size: 1.0rem;
   text-align:start;
 }
 
@@ -172,12 +184,11 @@ option {
   color: #333; 
 }
 
-/* Hover style for the options */
+
 option:hover {
   background-color: #e0e0e0;
 }
 
-/* Selected option style */
 option:checked {
   background-color: #478a96; 
   color: #fff; 
@@ -209,6 +220,31 @@ select{
   color: #fff;
   background-color: var(--color-amaranth);
 }
+ 
+
+        .image-section {
+          display: flex;
+          justify-content: space-around; 
+          align-items: center;
+          flex-wrap: wrap; 
+
+          padding: 25px; 
+          background-image: url(aca-pic);
+        }
+
+        .image-container {
+          box-sizing: border-box;
+        }
+
+        .image1 {
+          max-width: 50rem;
+          height: 30rem;
+        }
+
+        .image2 {
+          max-width: 50rem;
+          height: 30rem;
+        }
 
 
 /*Media Responsive design */
