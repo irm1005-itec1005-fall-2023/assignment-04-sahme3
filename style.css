@@ -220,32 +220,6 @@ select{
   color: #fff;
   background-color: var(--color-amaranth);
 }
- 
-
-        .image-section {
-          display: flex;
-          justify-content: space-around; 
-          align-items: center;
-          flex-wrap: wrap; 
-
-          padding: 25px; 
-          background-image: url(aca-pic);
-        }
-
-        .image-container {
-          box-sizing: border-box;
-        }
-
-        .image1 {
-          max-width: 50rem;
-          height: 30rem;
-        }
-
-        .image2 {
-          max-width: 50rem;
-          height: 30rem;
-        }
-
 
 /*Media Responsive design */
 @media (max-width: 767px) {
