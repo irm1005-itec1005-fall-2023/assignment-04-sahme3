@@ -31,6 +31,7 @@ function inititialise() {
     console.error("Error: Could not find app contianer");
     return;
   }
+  updateCount();
 }
 
   // Create an h1 and add it to our app
@@ -49,6 +50,8 @@ taskInput.addEventListener("keypress", function (event) {
   }
 });
   appContainer.appendChild(taskInput);
+
+
 
 
 // Category select
@@ -74,9 +77,7 @@ categorySelect.innerHTML = `
 `;
 appContainer.appendChild(categorySelect);
 
-
-
-
+    
     // button to add task
     const addButton = document.createElement("button");
     addButton.textContent = "+ Add Task";
@@ -84,6 +85,10 @@ appContainer.appendChild(categorySelect);
     appContainer.appendChild(addButton);
 
     
+// Create a message for no tasks
+const noTasksMessage = document.createElement("p");
+noTasksMessage.id = "noTasksMessage";
+appContainer.appendChild(noTasksMessage);
 
    //counter
    const countText = document.getElementById("count");
@@ -100,6 +105,12 @@ appContainer.appendChild(categorySelect);
     else {
       countText.innerHTML = "";
     }
+     if (taskList.children.length === 0) {
+      noTasksMessage.textContent = "No tasks yet, time to change that!";
+    }
+    else {
+      noTasksMessage.textContent = "";
+    }
   }
 
 
@@ -112,6 +123,7 @@ appContainer.appendChild(categorySelect);
   // Init complete
   console.log("App successfully initialised");
 
+  
 
 
 // add a new task
@@ -130,6 +142,7 @@ function addTask() {
 
       const taskItem = document.createElement("li");
       taskItem.textContent = taskInput.value;
+      taskItem.classList.add("task-added");
 
 
       // Add category to task
@@ -142,6 +155,8 @@ categoryDiv.style.display = "inline-block";
 categoryDiv.style.marginLeft = "5px"; 
 taskItem.appendChild(categoryDiv);
       
+
+
       // Mark as Complete button
       const completeButton = document.createElement("button");
       completeButton.textContent = "Mark as Complete";
@@ -160,8 +175,10 @@ taskItem.appendChild(categoryDiv);
       taskInput.value = "";
       categorySelect.value = "";
 
+      
       updateCount();
   }
+
   
 
   // mark a task as complete
@@ -182,13 +199,10 @@ taskItem.appendChild(categoryDiv);
   taskItem.appendChild(completedMark);
 
 
-  taskItem.classList.add("completed"); 
-  taskItem.removeChild(event.target);
-  taskItem.removeChild(deleteButton);
-
-  
-  updateCount();
-}
+    taskItem.classList.add("completed"); 
+    taskItem.removeChild(event.target);
+    updateCount();
+  }
   
 
   

@@ -142,6 +142,7 @@ button {
   margin-top: 3px;
   font-size: 1.0rem;
   text-align:start;
+  font-weight: bold;
 }
 #countcomp {
   margin-top: 3px;
@@ -215,6 +216,28 @@ select{
 
 }
 
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#noTasksMessage
+{
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: var(--colour-cello);
+  margin-top: 1rem;
+}
+.task-added {
+  animation: fadeIn 1s ease-in-out;
+}
 
 .delete {
   background-color: #fff;
