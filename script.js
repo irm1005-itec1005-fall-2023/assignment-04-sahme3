@@ -103,6 +103,7 @@ appContainer.appendChild(categorySelect);
   }
 
 
+
     // Create a ul for the task list
     const taskList = document.createElement("ul");
     appContainer.appendChild(taskList);
@@ -166,15 +167,31 @@ taskItem.appendChild(categoryDiv);
   // mark a task as complete
   function markComplete(event) {
       const taskItem = event.target.parentElement;
-      const completeButton = taskItem.querySelector("button");
-  const completedMark = document.createElement("comp");
+     
+  
+  // Move to the bottom of the list
+  taskList.appendChild(taskItem);
+
+  // Add the 'completed' class
+  taskItem.classList.add("completed");
+
+  //✅ 
+  const completedMark = document.createElement("span");
   completedMark.textContent = " ✅";
   completedMark.style.color = "green";
   taskItem.appendChild(completedMark);
-  taskItem.removeChild(completeButton);
+
+
+  taskItem.classList.add("completed"); 
+  taskItem.removeChild(event.target);
   taskItem.removeChild(deleteButton);
+
+  
   updateCount();
-  }
+}
+  
+
+  
   //delete a task
   function deleteTask(event) {
       const taskItem = event.target.parentElement;
@@ -199,6 +216,8 @@ function deleteAllTasks() {
  
   updateCount();
 }
+
+
 
   
 inititialise();
